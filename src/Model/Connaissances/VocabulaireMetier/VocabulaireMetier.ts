@@ -1,7 +1,7 @@
-import { Connaissance } from "../Connaissance";
+import { Competence } from "../Competence";
 import { Terme } from "./Terme";
 
-export class VocabulaireMetier extends Connaissance {
+export class VocabulaireMetier extends Competence {
     public termes: { [key: string]: Terme };
 
     constructor(termes: Terme[]) {

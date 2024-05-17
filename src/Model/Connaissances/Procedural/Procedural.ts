@@ -1,7 +1,7 @@
-import { Connaissance } from "../Connaissance";
+import { Competence } from "../Competence";
 import { Etape } from "./Etape";
 
-export class Procedural extends Connaissance {
+export class Procedural extends Competence {
     public Etapes: Etape[];
 
     constructor(nom: string, description: string, steps: Etape[]) {

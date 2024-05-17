@@ -1,7 +1,7 @@
-import { Connaissance } from "../Connaissance";
+import { Competence } from "../Competence";
 import { Regle } from "./Regle";
 
-export class ExpertiseMetier extends Connaissance {
+export class ExpertiseMetier extends Competence {
     public regles: Regle[];
 
     constructor(nom: string, description: string, rules: Regle[]) {

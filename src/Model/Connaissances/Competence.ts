@@ -1,6 +1,8 @@
-export class Connaissance {
+export class Competence {
     public nom: string;
     public description: string;
+
+    // TODO : A préciser
     public parametres: { [key: string]: any };
 
     constructor(nom: string, description: string) {
