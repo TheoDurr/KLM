@@ -1,21 +1,30 @@
 // Importez les classes nécessaires
-import { FilliereMetier } from '.././Model/FilliereMetier/FilliereMetier';
+import {FilliereMetier} from '.././Model/FilliereMetier/FilliereMetier';
 
 // Importez le fichier JSON
 import data from '.././Data/Cuisine.json';
-import { DomaineCompetence } from '../Model/DomaineCompetence/DomaineCompetence';
-import { VocabulaireMetier } from '../Model/Connaissances/VocabulaireMetier/VocabulaireMetier';
-import { Terme } from "../Model/Connaissances/VocabulaireMetier/Terme";
-import { Lien } from "../Model/Connaissances/VocabulaireMetier/Lien";
-import { useState } from 'react';
-import { Box, Button, Typography, Divider, Accordion, AccordionDetails, AccordionSummary, List, ListItem, ListItemText } from '@mui/material';
+import {DomaineCompetence} from '../Model/DomaineCompetence/DomaineCompetence';
+import {VocabulaireMetier} from '../Model/Connaissances/VocabulaireMetier/VocabulaireMetier';
+import {Terme} from "../Model/Connaissances/VocabulaireMetier/Terme";
+import {Lien} from "../Model/Connaissances/VocabulaireMetier/Lien";
 import React from 'react';
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Box,
+    Divider,
+    List,
+    ListItem,
+    ListItemText,
+    Typography
+} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Procedural } from '../Model/Connaissances/Procedural/Procedural';
-import { Etape } from '../Model/Connaissances/Procedural/Etape';
-import { Experimental } from '../Model/Connaissances/Experimental/Experimental';
-import { ExpertiseMetier } from '../Model/Connaissances/ExpertiseMetier/ExpertiseMetier';
-import { Regle } from '../Model/Connaissances/ExpertiseMetier/Regle';
+import {Procedure} from '../Model/Connaissances/Procedural/Procedure';
+import {Etape} from '../Model/Connaissances/Procedural/Etape';
+import {Experience} from '../Model/Connaissances/Experimental/Experience';
+import {ExpertiseMetier} from '../Model/Connaissances/ExpertiseMetier/ExpertiseMetier';
+import {Regle} from '../Model/Connaissances/ExpertiseMetier/Regle';
 
 const Visualisation: React.FC = () => {
     const filiereMetier: FilliereMetier = new FilliereMetier(
@@ -40,7 +49,7 @@ const Visualisation: React.FC = () => {
                     }),
                 ),
                 domaine.Procedural.map((proc: any) => {
-                    return new Procedural(
+                    return new Procedure(
                         proc.nom,
                         proc.description,
                         proc.etape.map((step: any) => {
@@ -52,7 +61,7 @@ const Visualisation: React.FC = () => {
                     );
                 }),
                 domaine.Experimental.map((exp: any) => {
-                    return new Experimental(
+                    return new Experience(
                         exp.nom,
                         exp.description,
                         exp.type,

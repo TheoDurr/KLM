@@ -1,11 +1,11 @@
-import { Competence } from "../Competence";
+import {Competence} from "../Competence";
 
 export enum TypeExperience {
     CE = "Cas d'école",
     BM = "Bétise métier"
 }
 
-export class Experimental extends Competence {
+export class Experience extends Competence {
     public type: TypeExperience;
 
     constructor(nom: string, description: string, type: string) {
