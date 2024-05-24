@@ -38,7 +38,7 @@ model Expertise {
   id          Int      @id @default(autoincrement())
   nom         String
   description String
-  Domaine     Domaine? @relation(fields: [domaineId], references: [id])
+  domaine     Domaine? @relation(fields: [domaineId], references: [id])
   domaineId   Int?
 }
 
@@ -46,7 +46,7 @@ model Experience {
   id          Int      @id @default(autoincrement())
   nom         String
   description String
-  Domaine     Domaine? @relation(fields: [domaineId], references: [id])
+  domaine     Domaine? @relation(fields: [domaineId], references: [id])
   domaineId   Int?
 }
 
@@ -54,7 +54,7 @@ model Procedure {
   id          Int      @id @default(autoincrement())
   nom         String
   description String
-  Domaine     Domaine? @relation(fields: [domaineId], references: [id])
+  domaine     Domaine? @relation(fields: [domaineId], references: [id])
   domaineId   Int?
   etapes      Etape[]
 }
@@ -62,7 +62,7 @@ model Procedure {
 model Etape {
   id          Int        @id @default(autoincrement())
   description String
-  Procedure   Procedure? @relation(fields: [procedureId], references: [id])
+  procedure   Procedure? @relation(fields: [procedureId], references: [id])
   procedureId Int?
 }
 
@@ -71,15 +71,15 @@ model Vocabulaire {
   nom         String
   description String
   termes      Terme[]
-  Domaine     Domaine[]
+  domaine     Domaine[]
 }
 
 model Terme {
   id            Int          @id @default(autoincrement())
-  Vocabulaire   Vocabulaire? @relation(fields: [vocabulaireId], references: [id])
+  vocabulaire   Vocabulaire? @relation(fields: [vocabulaireId], references: [id])
   vocabulaireId Int?
   enfants       Lien[]       @relation(name: "termeParent")
-  Lien          Lien[]       @relation(name: "termeEnfant")
+  parents       Lien[]       @relation(name: "termeEnfant")
 }
 
 model Lien {
