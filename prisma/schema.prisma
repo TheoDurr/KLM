@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Organisation {
+  id       Int       @id @default(autoincrement())
+  nom      String
+  filieres Filiere[]
+}
+
+model Filiere {
+  id             Int          @id @default(autoincrement())
+  organisation   Organisation @relation(fields: [organisationId], references: [id])
+  organisationId Int
+  domaines       Domaine[]
+}
+
+model Domaine {
+  id            Int          @id @default(autoincrement())
+  filiere       Filiere      @relation(fields: [filiereId], references: [id])
+  filiereId     Int
+  expertises    Expertise[]
+  experiences   Experience[]
+  procedures    Procedure[]
+  vocabulaire   Vocabulaire  @relation(fields: [vocabulaireId], references: [id])
+  vocabulaireId Int
+}
+
+model Expertise {
+  id          Int      @id @default(autoincrement())
+  nom         String
+  description String
+  domaine     Domaine? @relation(fields: [domaineId], references: [id])
+  domaineId   Int?
+}
+
+model Experience {
+  id          Int      @id @default(autoincrement())
+  nom         String
+  description String
+  domaine     Domaine? @relation(fields: [domaineId], references: [id])
+  domaineId   Int?
+}
+
+model Procedure {
+  id          Int      @id @default(autoincrement())
+  nom         String
+  description String
+  domaine     Domaine? @relation(fields: [domaineId], references: [id])
+  domaineId   Int?
+  etapes      Etape[]
+}
+
+model Etape {
+  id          Int        @id @default(autoincrement())
+  description String
+  procedure   Procedure? @relation(fields: [procedureId], references: [id])
+  procedureId Int?
+}
+
+model Vocabulaire {
+  id          Int       @id @default(autoincrement())
+  nom         String
+  description String
+  termes      Terme[]
+  domaine     Domaine[]
+}
+
+model Terme {
+  id            Int          @id @default(autoincrement())
+  vocabulaire   Vocabulaire? @relation(fields: [vocabulaireId], references: [id])
+  vocabulaireId Int?
+  enfants       Lien[]       @relation(name: "termeParent")
+  parents       Lien[]       @relation(name: "termeEnfant")
+}
+
+model Lien {
+  id            Int    @id @default(autoincrement())
+  termeParent   Terme  @relation(name: "termeParent", fields: [idTermeParent], references: [id])
+  idTermeParent Int
+  termeEnfant   Terme  @relation(name: "termeEnfant", fields: [idTermeEnfant], references: [id])
+  idTermeEnfant Int
+  type          String
+}
