@@ -18,6 +18,7 @@ model Organisation {
 
 model Filiere {
   id             Int          @id @default(autoincrement())
+  nom            String
   organisation   Organisation @relation(fields: [organisationId], references: [id])
   organisationId Int
   domaines       Domaine[]
@@ -25,6 +26,7 @@ model Filiere {
 
 model Domaine {
   id            Int          @id @default(autoincrement())
+  nom           String
   filiere       Filiere      @relation(fields: [filiereId], references: [id])
   filiereId     Int
   expertises    Expertise[]

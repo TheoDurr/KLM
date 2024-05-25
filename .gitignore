@@ -6,6 +6,7 @@
 .pnp.js
 
 prisma/dev.db
+prisma/*.db-journal
 
 # testing
 /coverage
