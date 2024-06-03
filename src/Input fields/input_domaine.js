@@ -19,7 +19,7 @@ const InputDomaine = () => {
             />
             <br/>
             <select>
-                <option value="value1">Mairie de Badevelle</option>
+                <option value="value1">Mairie de Badevel</option>
             </select>
             <br/>
             <select>
