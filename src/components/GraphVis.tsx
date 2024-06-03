@@ -1,5 +1,7 @@
 import React from 'react';
 import Tree from 'react-d3-tree';
+import { useNavigate } from 'react-router-dom';
+import "../css/GraphVis.css"
 
 import DataTest from '.././Data/Cuisine.json';
 
@@ -44,7 +46,11 @@ const GraphVis = () => {
     return (
         // `<Tree />` will fill width/height of its container; in this case `#treeWrapper`.
         <div id="treeWrapper" style={{ width: '50em', height: '20em' }}>
-            <Tree data={orgChart} />
+            <Tree data={orgChart}
+              rootNodeClassName="node__root"
+              branchNodeClassName="node__branch"
+              leafNodeClassName="node__leaf"
+            />
         </div>
     );
 };
