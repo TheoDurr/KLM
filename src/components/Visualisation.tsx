@@ -2,7 +2,7 @@
 import {FilliereMetier} from '.././Model/FilliereMetier/FilliereMetier';
 
 // Importez le fichier JSON
-import data from '.././Data/Cuisine.json';
+import data from '.././Data/serre.json';
 import {DomaineCompetence} from '../Model/DomaineCompetence/DomaineCompetence';
 import {VocabulaireMetier} from '../Model/Connaissances/VocabulaireMetier/VocabulaireMetier';
 import {Terme} from "../Model/Connaissances/VocabulaireMetier/Terme";

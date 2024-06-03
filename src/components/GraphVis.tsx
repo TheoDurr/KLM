@@ -7,6 +7,7 @@ import cuisine_data from '.././Data/Cuisine.json';
 import patient_age_data from '../Data/patient_age.json';
 import maladie_plantes_data from '../Data/patient_age.json';
 import maison_inclusive from '../Data/maison_inclusive.json';
+import serre_data from '../Data/serre.json';
 
 interface Sector {
     data: any
@@ -16,7 +17,8 @@ const sectors: Sector[] = [
     { data: cuisine_data },
     { data: patient_age_data },
     { data: maladie_plantes_data },
-    { data: maison_inclusive }
+    { data: maison_inclusive },
+    { data: serre_data }
 ]
 
 function extractSectors(sectors: Sector[]) {
@@ -75,7 +77,7 @@ function extractKnowledge(domain: any) {
 
 function parseData(sectors: Sector[]) {
     let graph: any =  {
-        name: "KLM de la commune de Badevel",
+        name: "Badevel",
         children: extractSectors(sectors)
 
     }
