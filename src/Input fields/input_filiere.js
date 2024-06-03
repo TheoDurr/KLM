@@ -1,7 +1,7 @@
 // src/InputField.js
 import React, { useState } from 'react';
 
-const InputOrganisation = () => {
+const InputFiliere = () => {
     const [inputValue, setInputValue] = useState('');
 
     const handleChange = (event) => {
@@ -18,9 +18,13 @@ const InputOrganisation = () => {
                 onChange={handleChange}
             />
             <br/>
+            <select>
+                <option value="value1">Mairie de Badevelle</option>
+            </select>
+            <br/>
             <button>Créer</button>
         </div>
     );
 };
 
-export default InputOrganisation;
+export default InputFiliere;
