@@ -3,22 +3,22 @@ import Tree from 'react-d3-tree';
 import { useNavigate } from 'react-router-dom';
 import "../css/GraphVis.css"
 
-import cuisine_data from '.././Data/Cuisine.json';
 import patient_age_data from '../Data/patient_age.json';
-import maladie_plantes_data from '../Data/patient_age.json';
+import maladie_plantes_data from '../Data/maladies_plantes.json';
 import maison_inclusive from '../Data/maison_inclusive.json';
 import serre_data from '../Data/serre.json';
+import smart_city_data from '../Data/smart_city.json';
 
 interface Sector {
     data: any
 }
 
 const sectors: Sector[] = [
-    { data: cuisine_data },
     { data: patient_age_data },
     { data: maladie_plantes_data },
     { data: maison_inclusive },
-    { data: serre_data }
+    { data: serre_data },
+    { data: smart_city_data }
 ]
 
 function extractSectors(sectors: Sector[]) {

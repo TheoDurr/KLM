@@ -1,6 +1,6 @@
 {
   "filliereMetier": {
-    "nom": "Détection de maladies des plantes",
+    "nom": "Maladies des plantes",
     "domaineMetier": [
       {
         "nom": "Reconnaissance et traitement des carences nutritionnelles",

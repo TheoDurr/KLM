@@ -1,6 +1,6 @@
 {
     "filliereMetier": {
-      "nom": "Détection de maladies chez un patient âgé",
+      "nom": "Patients âgés",
       "domaineMetier": [
         {
           "nom": "Identification des symptômes",

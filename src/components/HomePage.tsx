@@ -4,11 +4,9 @@ import AddIcon from '@mui/icons-material/Add';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { MuiFileInput } from 'mui-file-input'
 import '.././css/HomePage.css';
-import jsonData from '.././Data/Cuisine.json';
 
 const HomePage: React.FC = () => {
   useEffect(() => {
-    console.log(jsonData);
   }, []);
    
   const [showForm, setShowForm] = useState(false);
