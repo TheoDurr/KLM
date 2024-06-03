@@ -23,7 +23,7 @@ function extractSectors(sectors: Sector[]) {
     let result = []
     for (let sector of sectors) {
         result.push({
-            name: sector.data?.fillierMetier?.nom,
+            name: sector.data?.filliereMetier?.nom,
             children: extractDomains(sector)
         })
     }
@@ -50,13 +50,11 @@ function extractKnowledge(domain: any) {
 
     })
 
-
     // Procedural
     result.push({
         name: "Processus",
 
     })
-
 
     // ExpertiseMetier
     result.push({
