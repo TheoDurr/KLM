@@ -36,12 +36,12 @@ const Home: React.FC = () => {
           </AppBar>
           <Tabs value={selectedTab} onChange={handleTabChange} variant="fullWidth">
             <Tab label="Visualisation" sx={{fontSize: '16px'}} />
-            <Tab label="Test" sx={{fontSize: '16px'}} />
+            <Tab label="Détail" sx={{fontSize: '16px'}} />
             <Tab label="Modifier" sx={{fontSize: '16px'}}/>
             <Tab label="Manipulation" sx={{fontSize: '16px'}}/>
           </Tabs>
-          {selectedTab === 0 && <Visualisation />}
-          {selectedTab === 1 && <GraphVis />}
+          {selectedTab === 0 && <GraphVis />}
+          {selectedTab === 1 && <Visualisation />}
           {selectedTab === 2 && <Modifier />}
           {selectedTab === 3 && <IAComponent />}
         </Box>
