@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Tabs, Tab, Box } from '@mui/material';
 import '.././css/Home.css';
 import Visualisation from './Visualisation';
-import ForceGraph from "./ForceGraph";
+import Modifier from "./Modifier";
+import GraphVis from "./GraphVis";
 
 const Home: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -40,17 +41,14 @@ const Home: React.FC = () => {
             <Tab label="Manipulation" sx={{fontSize: '16px'}}/>
           </Tabs>
           {selectedTab === 0 && <Visualisation />}
-          {selectedTab === 1 && <ForceGraph />}
-          {selectedTab === 2 && <ModifierComponent />}
+          {selectedTab === 1 && <GraphVis />}
+          {selectedTab === 2 && <Modifier />}
           {selectedTab === 3 && <IAComponent />}
         </Box>
     </div>
   );
 };
 
-const ModifierComponent: React.FC = () => {
-  return <div>Oups ! Contenu en cours de developpement </div>;
-};
 
 const IAComponent: React.FC = () => {
   return <div>Oups ! Contenu en cours de developpement </div>;
