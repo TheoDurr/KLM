@@ -123,13 +123,14 @@ const orgChart = {
 const GraphVis = () => {
 
     return (
-        // `<Tree />` will fill width/height of its container; in this case `#treeWrapper`.
-        <div id="treeWrapper" style={{ width: '50em', height: '20em' }}>
-            <Tree data={badevelChart}
-              rootNodeClassName="node__root"
-              branchNodeClassName="node__branch"
-              leafNodeClassName="node__leaf"
-            />
+        <div style={{ width: '100vw', height: '100vh' }}>
+            <div id="treeWrapper" style={{ width: '100%', height: '100%' }}>
+                <Tree data={badevelChart}
+                  rootNodeClassName="node__root"
+                  branchNodeClassName="node__branch"
+                  leafNodeClassName="node__leaf"
+                />
+            </div>
         </div>
     );
 };
